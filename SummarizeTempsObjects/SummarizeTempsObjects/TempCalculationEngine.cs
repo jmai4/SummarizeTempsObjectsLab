@@ -19,29 +19,60 @@ namespace SummarizeTempsObjects
             // add logic to calculate the average
             foreach (int temp in _temperatures)
             {
-
                 SumOfTemps += temp;
-
             }
             return SumOfTemps/_temperatures.Count; // <-- Replace this with the actual average
         }
 
         public int TempsAboveThreshold(int threshold)
-        {
+        { int TotalAboveThreshold = 0;
+            foreach (int temp in _temperatures)
+            {
+                if (temp > threshold)
+                {
+                    TotalAboveThreshold += 1;
+                }
+                else
+                {
+                    TotalAboveThreshold += 0;
+                }
+            }
             // add logic to calculate temps above the threshold
-            return 0; // <-- Replace this with the number
+            return TotalAboveThreshold; // <-- Replace this with the number
         }
 
         public int TempsBelowThreshold(int threshold)
-        {
+        {int TotalBelowThreshold = 0;
+            foreach (int temp in _temperatures)
+            {
+                if (temp < threshold)
+                {
+                    TotalBelowThreshold += 1;
+                }
+                else
+                {
+                    TotalBelowThreshold += 0;
+                }
+            }
             // add logic to calculate and return temps below the threshold
-            return 0; // <-- Replace this with the number
+            return TotalBelowThreshold; // <-- Replace this with the number
         }
 
         public int TempsAtThreshold(int threshold)
-        {
+        {int TotalAtThreshold = 0;
+            foreach(int temp in _temperatures)
+            {
+                if (temp == threshold)
+                {
+                    TotalAtThreshold += 1;
+                }
+                else
+                {
+                    TotalAtThreshold += 0;
+                }
+            }
             // add logic to calculate and return temps at the threshold
-            return 0; // <-- Replace this with the number
+            return TotalAtThreshold; // <-- Replace this with the number
         }
 
         public int NumberOfTemperatures()
