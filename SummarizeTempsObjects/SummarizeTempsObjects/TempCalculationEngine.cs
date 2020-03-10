@@ -15,8 +15,15 @@ namespace SummarizeTempsObjects
 
         public int AverageTemperature()
         {
+            int SumOfTemps = 0;
             // add logic to calculate the average
-            return 0; // <-- Replace this with the actual average
+            foreach (int temp in _temperatures)
+            {
+
+                SumOfTemps += temp;
+
+            }
+            return SumOfTemps/_temperatures.Count; // <-- Replace this with the actual average
         }
 
         public int TempsAboveThreshold(int threshold)
@@ -40,7 +47,7 @@ namespace SummarizeTempsObjects
         public int NumberOfTemperatures()
         {
             // add logic to return the number of temparature readings
-            return 0; // <-- Replace this with the number
+            return _temperatures.Count; // <-- Replace this with the number
         }
     }
 }
